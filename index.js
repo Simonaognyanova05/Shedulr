@@ -5,7 +5,7 @@ const path = require('path');
 
 const homeController = require('./src/home');
 const categoriesController = require('./src/categories');
-
+const loginController = require('./src/login');
 
 const app = express();
 
@@ -23,5 +23,7 @@ app.set('view engine', 'hbs');
 
 app.get('/', homeController);
 app.get('/categories', categoriesController);
+app.get('/login', loginController);
+
 
 app.listen(3000);
