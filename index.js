@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 
 const homeController = require('./src/home');
+const categoriesController = require('./src/categories');
+
 
 const app = express();
 
@@ -20,4 +22,6 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
 app.get('/', homeController);
+app.get('/categories', categoriesController);
+
 app.listen(3000);
