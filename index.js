@@ -10,7 +10,7 @@ const registerController = require('./src/register');
 const parentsController = require('./src/parents');
 const teenController = require('./src/teen');
 const womenController = require('./src/women');
-
+const housewifeController = require('./src/housewife');
 
 const app = express();
 
@@ -33,5 +33,6 @@ app.get('/register', registerController);
 app.get('/parents', parentsController);
 app.get('/teen', teenController);
 app.get('/women', womenController);
+app.get('/housewife', housewifeController);
 
 app.listen(3000);
