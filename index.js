@@ -8,7 +8,7 @@ const categoriesController = require('./src/categories');
 const loginController = require('./src/login');
 const registerController = require('./src/register');
 const parentsController = require('./src/parents');
-
+const teenController = require('./src/teen');
 
 const app = express();
 
@@ -29,5 +29,7 @@ app.get('/categories', categoriesController);
 app.get('/login', loginController);
 app.get('/register', registerController);
 app.get('/parents', parentsController);
+app.get('/teen', teenController);
+
 
 app.listen(3000);
