@@ -28,6 +28,7 @@ app.use(expressSession({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+//Controlles
 app.get('/', homeController);
 app.get('/categories', categoriesController);
 app.get('/login', loginController);
