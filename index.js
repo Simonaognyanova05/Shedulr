@@ -15,6 +15,7 @@ const petsController = require('./src/pets');
 const otherController = require('./src/other');
 const registerReq = require('./requests/registerReq');
 const loginReq = require('./requests/loginReq');
+const parentsComment = require('./src/parentsComment');
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.get('/women', womenController);
 app.get('/housewife', housewifeController);
 app.get('/pets', petsController);
 app.get('/other', otherController);
+app.get('/addCommentParents', parentsComment);
 
 app.post('/register', async(req, res) => {
     await registerReq(req, res);
