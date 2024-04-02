@@ -16,6 +16,7 @@ const otherController = require('./src/other');
 const registerReq = require('./requests/registerReq');
 const loginReq = require('./requests/loginReq');
 const parentsComment = require('./src/parentsComment');
+const addParentsComment = require('./requests/parentsCommentReq');
 
 const app = express();
 
@@ -49,6 +50,9 @@ app.post('/register', async(req, res) => {
 })
 app.post('/login', async(req, res) => {
     await loginReq(req, res);
+})
+app.post('/addCommentParents', async(req, res) => {
+    await addParentsComment(req, res);
 })
 
 app.listen(3000);
