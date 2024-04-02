@@ -28,12 +28,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/categories">Категории</a>
                     </li>
+                    {{#if user}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{user.username}}</a>
+                    </li>
+                    {{else}}
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Влизане</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/register">Регистрация</a>
-                    </li>    
+                    </li>
+                    {{/if}}
                 </ul>
             </div>
         </div>
