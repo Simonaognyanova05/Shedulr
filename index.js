@@ -13,6 +13,7 @@ const womenController = require('./src/women');
 const housewifeController = require('./src/housewife');
 const petsController = require('./src/pets');
 const otherController = require('./src/other');
+const registerReq = require('./requests/registerReq');
 
 const app = express();
 
@@ -39,5 +40,9 @@ app.get('/women', womenController);
 app.get('/housewife', housewifeController);
 app.get('/pets', petsController);
 app.get('/other', otherController);
+
+app.post('/register', async(req, res) => {
+    await registerReq(req, res);
+})
 
 app.listen(3000);
