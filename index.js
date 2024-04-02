@@ -14,6 +14,7 @@ const housewifeController = require('./src/housewife');
 const petsController = require('./src/pets');
 const otherController = require('./src/other');
 const registerReq = require('./requests/registerReq');
+const loginReq = require('./requests/loginReq');
 
 const app = express();
 
@@ -43,6 +44,9 @@ app.get('/other', otherController);
 
 app.post('/register', async(req, res) => {
     await registerReq(req, res);
+})
+app.post('/login', async(req, res) => {
+    await loginReq(req, res);
 })
 
 app.listen(3000);

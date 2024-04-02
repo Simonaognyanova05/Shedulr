@@ -4,7 +4,6 @@ const User = require('../models/User');
 
 const dbUrl = 'mongodb://localhost:27017/teenForum_db';
 
-
 const connectionParams = {
     useUnifiedTopology: true,
     useNewUrlParser: true
