@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
     return (
         <nav>
             <ul>
-                <li><a href="login.html">Вход</a></li>
-                <li><a href="register.html">Регистрация</a></li>
-                <li><a href="create-task.html">Създай Задача</a></li>
-                <li><a href="task-list.html">Моите Задачи</a></li>
+                <li><Link to="/login">Вход</Link></li>
+                <li><Link to="/register">Регистрация</Link></li>
+                <li><Link to="/create-task">Създай Задача</Link></li>
+                <li><Link to="/task-list">Моите Задачи</Link></li>
             </ul>
         </nav>
     );
