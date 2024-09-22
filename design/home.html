@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Начало - To-Do App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #343a40;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+ 
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #495057;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero {
+            background-color: #28a745;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            background-color: white;
+            color: #28a745;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #f8f9fa;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .feature-box {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: #666;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .socials {
+            list-style-type: none;
+            display: flex;
+            margin: 10px 0 0 0;
+            padding: 0;
+        }
+
+        .socials li {
+            margin: 0 10px;
+        }
+
+        .socials li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .socials li img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-box {
+                margin-bottom: 20px;
+            }
+
+            footer .footer-content {
+                text-align: center;
+            }
+
+            .socials {
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="login.html">Вход</a></li>
+            <li><a href="register.html">Регистрация</a></li>
+            <li><a href="create-task.html">Създай Задача</a></li>
+            <li><a href="task-list.html">Моите Задачи</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Добре дошли в To-Do App</h1>
+        <p>Управлявайте задачите си лесно и ефективно. Регистрирайте се днес и планирайте ежедневието си!</p>
+        <button onclick="location.href='register.html'">Регистрация</button>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature-box">
+            <h3>Организация</h3>
+            <p>Създавайте, управлявайте и следете своите задачи с лекота.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Проследяване</h3>
+            <p>Следете напредъка си и завършвайте задачите си навреме.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Достъпност</h3>
+            <p>Лесен достъп до задачите ви от всяко устройство.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 To-Do App. Всички права запазени.</p>
+            <ul class="socials">
+                <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="instagram-icon.png" alt="Instagram"></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

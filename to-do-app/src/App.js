@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Create from './components/Create';
 import Tasks from './components/Tasks';
+import Home from './components/Home';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/create-task' element={<Create />} />

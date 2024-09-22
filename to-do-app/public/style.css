@@ -37,6 +37,58 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
+.hero {
+    background-color: #28a745;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: white;
+    color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #f8f9fa;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.feature-box {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    color: #666;
+}
+
 .container {
     background-color: white;
     padding: 20px;
@@ -215,6 +267,23 @@ footer p {
     .container-task {
         width: 90%;
         padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        margin-bottom: 20px;
     }
 
     button,
