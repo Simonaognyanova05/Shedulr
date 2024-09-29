@@ -9,23 +9,28 @@ const connectionParams = {
     useNewUrlParser: true
 };
 
-async function register(req, res) {
+async function login(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
     const { username, password } = req.body;
 
     try {
-        const hashedPass = await bcrypt.hash(password, 10);
-        const user = new User({
-            username,
-            hashedPass
-        });
+        const user = await User.findOne({ username });
 
-        await user.save();
-        return res.status(200).json();
+        if (!user) {
+            return res.status(400).json();
+        };
+
+        const comparedPass = await bcrypt.compare(password, user.hashedPass);
+
+        if (!comparedPass) {
+            return res.status(401).json();
+        };
+
+        return res.status(200).json({ _id: user._id, username: user.username })
     } catch (e) {
         throw e;
     }
-}
+};
 
-module.exports = { register };
+module.exports = { login };
