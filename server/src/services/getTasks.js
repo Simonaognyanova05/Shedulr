@@ -8,21 +8,16 @@ const connectionParams = {
     useNewUrlParser: true
 };
 
-async function createTask(req, res) {
+async function getTasks(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { title, description } = req.body;
-
     try {
-        const task = new Task({
-            title, description
-        });
-
-        await task.save();
-        return res.status(200).json();
+        const tasks = await Task.find({});
+        
+        return tasks;
     } catch (e) {
         throw e;
     }
 };
 
-module.exports = { createTask };
+module.exports = { getTasks };

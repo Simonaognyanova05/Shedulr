@@ -3,6 +3,7 @@ const cors = require('cors');
 const { register } = require('./services/register');
 const { login } = require('./services/login');
 const { createTask } = require('./services/createTask');
+const { getTasks } = require('./services/getTasks');
 
 const app = express();
 
@@ -19,5 +20,10 @@ app.post('/login', async (req, res) => {
 
 app.post('/create', async (req, res) => {
     await createTask(req, res);
+});
+
+app.get('/tasks', async (req, res) => {
+    const tasks = await getTasks(req, res);
+    return res.json(tasks);
 })
 app.listen(2000);
