@@ -4,6 +4,7 @@ const { register } = require('./services/register');
 const { login } = require('./services/login');
 const { createTask } = require('./services/createTask');
 const { getTasks } = require('./services/getTasks');
+const { deleteTask } = require('./services/deleteTask');
 
 const app = express();
 
@@ -25,5 +26,9 @@ app.post('/create', async (req, res) => {
 app.get('/tasks', async (req, res) => {
     const tasks = await getTasks(req, res);
     return res.json(tasks);
+});
+
+app.delete('/remove/:taskId', async (req, res) => {
+    await deleteTask(req, res);
 })
 app.listen(2000);
