@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
 import { register } from "../services/register";
 
@@ -42,7 +42,7 @@ export default function Register() {
                 <button type="submit">Регистрация</button>
             </form>
             <div class="links">
-                <p>Вече имате акаунт? <a href="login.html">Вход</a></p>
+                <p>Вече имате акаунт? <Link to="/login">Вход</Link></p>
             </div>
         </div>
     );
