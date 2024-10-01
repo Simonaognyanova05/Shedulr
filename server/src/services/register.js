@@ -12,11 +12,12 @@ const connectionParams = {
 async function register(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { username, password } = req.body;
+    const { name, username, password } = req.body;
 
     try {
         const hashedPass = await bcrypt.hash(password, 10);
         const user = new User({
+            name,
             username,
             hashedPass
         });
