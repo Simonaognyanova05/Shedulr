@@ -12,7 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/register', async (req, res) => {
-    await register(req, res);
+    let user = await register(req, res);
+    return res.json(user);
 });
 
 app.post('/login', async (req, res) => {
