@@ -14,6 +14,15 @@ export default function Login() {
 
         let data = await login(username, password);
 
+        if(data.status === 400){
+            alert('Потребителят не съществува!');
+            return;
+        };
+
+        if(data.status === 401){
+            alert('Грешна парола!');
+            return;
+        }
         let result = await data.json();
         onLogin(result);
         navigate('/');
