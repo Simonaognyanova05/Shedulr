@@ -11,11 +11,10 @@ const connectionParams = {
 async function createTask(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { title, description } = req.body;
-
+    const { title, description, ownerId } = req.body;
     try {
         const task = new Task({
-            title, description
+            title, description, ownerId
         });
 
         await task.save();

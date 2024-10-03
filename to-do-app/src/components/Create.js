@@ -1,10 +1,32 @@
+import { useNavigate } from 'react-router-dom';
+import { createTask } from '../services/createTask';
+import { useAuth } from '../contexts/AuthContext';
+
 export default function Create() {
+    const navigate = useNavigate();
+    const { user } = useAuth();
+
+    const createHandler = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        
+        const { title, description } = Object.fromEntries(formData);
+
+        const ownerId = user._id;
+
+        let data = await createTask(title, description, ownerId);
+
+        if(data.status === 200){
+            navigate('/');
+        }
+    }
     return (
         <div class="container">
             <h2>Създай Задача</h2>
-            <form action="#" method="post">
-                <input type="text" placeholder="Заглавие на задача" required />
-                <textarea placeholder="Описание на задачата" required></textarea>
+            <form onSubmit={createHandler}>
+                <input type="text" name="title" placeholder="Заглавие на задача" required />
+                <textarea name="description" placeholder="Описание на задачата" required></textarea>
                 <button type="submit">Добави Задача</button>
             </form>
         </div>
