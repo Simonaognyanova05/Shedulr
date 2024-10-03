@@ -11,9 +11,11 @@ const connectionParams = {
 async function getTasks(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
+    const { ownerId } = req.body;
+
     try {
-        const tasks = await Task.find({});
-        
+        const tasks = await Task.find({ ownerId });
+
         return tasks;
     } catch (e) {
         throw e;
