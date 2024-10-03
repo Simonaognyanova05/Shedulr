@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Login from './components/Login';
 import Register from './components/Register';
 import Create from './components/Create';
-import Tasks from './components/Tasks';
+import Tasks from './components/Tasks/Tasks';
 import Home from './components/Home';
 import { AuthProvider } from './contexts/AuthContext';
 import Logout from './components/Logout';
