@@ -12,7 +12,6 @@ export default function Register() {
         let formData = new FormData(e.currentTarget);
         const { name, username, password, rePassword } = Object.fromEntries(formData);
 
-        let data = await register(name, username, password);
         if (username.length < 6) {
             alert('Username must be min 6 symbols!');
             return;
@@ -26,10 +25,11 @@ export default function Register() {
             return;
         };
 
-        if (data.status === 200) {
-            onRegister(data);
-            navigate('/');
-        }
+        let data = await register(name, username, password);
+        let res = await data.json();
+        onRegister(res);
+        navigate('/');
+
     }
     return (
         <div class="container">

@@ -16,6 +16,7 @@ async function register(req, res) {
 
     try {
         const hashedPass = await bcrypt.hash(password, 10);
+
         const user = new User({
             name,
             username,
@@ -23,7 +24,8 @@ async function register(req, res) {
         });
 
         await user.save();
-        return res.status(200).json();
+        return res.status(200).json({ _id: user._id, name: user.name, username: user.username,  })
+
     } catch (e) {
         throw e;
     }

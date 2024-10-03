@@ -23,7 +23,7 @@ export default function Navbar() {
     return (
         <nav>
             <ul>
-                {Boolean(user.username) ? loggedUser : gusetUser}
+                {Boolean(user._id) ? loggedUser : gusetUser}
             </ul>
 
         </nav>

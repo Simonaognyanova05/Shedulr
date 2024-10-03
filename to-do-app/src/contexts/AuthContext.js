@@ -15,11 +15,14 @@ export const AuthProvider = ({ children }) => {
     });
 
     const onRegister = (authData) => {
+        console.log('User registered:', authData);
         setUser(authData);
         localStorage.setItem('user', JSON.stringify(authData));
     };
 
     const onLogin = (authData) => {
+        console.log('User registered:', authData);
+
         setUser(authData);
         localStorage.setItem('user', JSON.stringify(authData));
     };
