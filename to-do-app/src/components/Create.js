@@ -22,7 +22,7 @@ export default function Create() {
         }
     }
     return (
-        <div class="container">
+        <div className="container">
             <h2>Създай Задача</h2>
             <form onSubmit={createHandler}>
                 <input type="text" name="title" placeholder="Заглавие на задача" required />

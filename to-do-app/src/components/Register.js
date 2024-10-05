@@ -32,7 +32,7 @@ export default function Register() {
 
     }
     return (
-        <div class="container">
+        <div className="container">
             <h2>Регистрация</h2>
             <form onSubmit={registerHandler}>
                 <input type="text" name="name" placeholder="Име" required />
@@ -41,7 +41,7 @@ export default function Register() {
                 <input type="password" name="rePassword" placeholder="Потвърдете паролата" required />
                 <button type="submit">Регистрация</button>
             </form>
-            <div class="links">
+            <div className="links">
                 <p>Вече имате акаунт? <Link to="/login">Вход</Link></p>
             </div>
         </div>

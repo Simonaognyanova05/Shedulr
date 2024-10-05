@@ -21,11 +21,11 @@ export default function Tasks() {
 
 
     return (
-        <div class="container-task">
+        <div className="container-task">
             <h2>Моите Задачи</h2>
 
             {tasks.length > 0
-                ? tasks.map(x => <TasksItem task={x} />)
+                ? tasks.map(x => <TasksItem key={x._id} task={x} />)
                 : 'Няма създадени задачи'}
 
 

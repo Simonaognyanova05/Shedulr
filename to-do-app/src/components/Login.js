@@ -29,14 +29,14 @@ export default function Login() {
 
     }
     return (
-        <div class="container">
+        <div className="container">
             <h2>Вход</h2>
             <form onSubmit={loginHandler}>
                 <input type="text" name="username" placeholder="Потребителско име" required />
                 <input type="password" name="password" placeholder="Парола" required />
                 <button type="submit">Вход</button>
             </form>
-            <div class="links">
+            <div className="links">
                 <p><a href="#">Забравена парола?</a></p>
                 <p>Нямате акаунт? <a href="register.html">Регистрирайте се</a></p>
             </div>
