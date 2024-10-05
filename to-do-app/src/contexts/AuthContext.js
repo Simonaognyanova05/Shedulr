@@ -22,7 +22,6 @@ export const AuthProvider = ({ children }) => {
 
     const onLogin = (authData) => {
         console.log('User registered:', authData);
-
         setUser(authData);
         localStorage.setItem('user', JSON.stringify(authData));
     };

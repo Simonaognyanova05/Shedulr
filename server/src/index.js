@@ -23,7 +23,7 @@ app.post('/create', async (req, res) => {
     await createTask(req, res);
 });
 
-app.get('/tasks', async (req, res) => {
+app.get('/tasks/:ownerId', async (req, res) => {
     const tasks = await getTasks(req, res);
     return res.json(tasks);
 });

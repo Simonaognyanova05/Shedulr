@@ -11,8 +11,7 @@ const connectionParams = {
 async function getTasks(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { ownerId } = req.body;
-
+    const ownerId = req.params.ownerId;
     try {
         const tasks = await Task.find({ ownerId });
 

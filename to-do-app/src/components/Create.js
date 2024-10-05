@@ -10,7 +10,7 @@ export default function Create() {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        
+
         const { title, description } = Object.fromEntries(formData);
 
         const ownerId = user._id;
@@ -18,7 +18,7 @@ export default function Create() {
         let data = await createTask(title, description, ownerId);
 
         if(data.status === 200){
-            navigate('/');
+            navigate('/task-list');
         }
     }
     return (
