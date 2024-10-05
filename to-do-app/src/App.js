@@ -8,6 +8,7 @@ import Tasks from './components/Tasks/Tasks';
 import Home from './components/Home';
 import { AuthProvider } from './contexts/AuthContext';
 import Logout from './components/Logout';
+import Delete from './components/Delete';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/create-task' element={<Create />} />
           <Route path='/task-list' element={<Tasks />} />
+          <Route path='/remove/:taskId' element={<Delete />} />
+
 
         </Routes>
         <Footer />

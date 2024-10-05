@@ -139,7 +139,8 @@ h2 {
     text-align: right;
 }
 
-.task-actions button {
+.delete-btn {
+    text-decoration: none;
     background-color: #dc3545;
     color: white;
     border: none;
@@ -148,7 +149,7 @@ h2 {
     cursor: pointer;
 }
 
-.task-actions button:hover {
+.delete-btn:hover {
     background-color: #c82333;
 }
 
