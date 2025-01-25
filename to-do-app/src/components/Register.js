@@ -25,12 +25,17 @@ export default function Register() {
             return;
         };
 
-        let data = await register(name, username, password);
-        let res = await data.json();
-        onRegister(res);
-        navigate('/');
+        let result = await register(name, username, password);
 
+        if (result.status === 200) {
+            onRegister(result.user);
+            alert('Registration successful!');
+            navigate('/');
+        } else {
+            alert(result.message);
+        }
     }
+
     return (
         <div className="container">
             <h2>Регистрация</h2>

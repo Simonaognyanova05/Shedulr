@@ -1,11 +1,12 @@
-export async function register(name, username, password) {
-    let data = await fetch('http://localhost:2000/register', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify({ name, username, password })
-    });
+import { auth } from "../config/firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-    return data;
+export async function register(name, username, password) {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, username, password);
+        return { status: 200, user: userCredential.user };
+    } catch (error) {
+        console.error("Error during registration:", error);
+        return { status: 500, error: error.message };
+    }
 }
