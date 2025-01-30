@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { login } from "../services/login";
 import { useAuth } from "../contexts/AuthContext";
+import { login } from "../services/login"; 
 
 export default function Login() {
     const navigate = useNavigate();
@@ -12,27 +12,27 @@ export default function Login() {
         const formData = new FormData(e.currentTarget);
         const { username, password } = Object.fromEntries(formData);
 
-        let data = await login(username, password);
+        try {
+            const user = await login(username, password);
 
-        if(data.status === 400){
-            alert('Потребителят не съществува!');
-            return;
-        };
+            onLogin({
+                _id: user.uid,
+                name: user.displayName || '',
+                username: user.email,
+            });
 
-        if(data.status === 401){
-            alert('Грешна парола!');
-            return;
+            navigate('/'); 
+
+        } catch (error) {
+            alert(error.message);
         }
-        let result = await data.json();
-        onLogin(result);
-        navigate('/');
+    };
 
-    }
     return (
         <div className="container">
             <h2>Вход</h2>
             <form onSubmit={loginHandler}>
-                <input type="text" name="username" placeholder="Потребителско име" required />
+                <input type="email" name="username" placeholder="Потребителско име (Email)" required />
                 <input type="password" name="password" placeholder="Парола" required />
                 <button type="submit">Вход</button>
             </form>

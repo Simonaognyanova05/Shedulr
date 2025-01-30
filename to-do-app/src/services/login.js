@@ -1,20 +1,24 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../config/firebaseConfig"; // Уверете се, че правилно сте конфигурирали Firebase
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; // Импортираме необходимите Firebase методи
 
-export async function login(email, password) {
+// Сървис за вход в Firebase
+export async function login(username, password) {
+    const auth = getAuth();
+
     try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        return {
-            user: {
-                uid: userCredential.user.uid,
-                email: userCredential.user.email,
-            },
-            status: 200,
-        };
+        // Опитваме се да влезем с email и парола
+        const userCredential = await signInWithEmailAndPassword(auth, username, password);
+        const user = userCredential.user; // Вземаме потребителя от резултата
+
+        // Връщаме данни за потребителя
+        return user;
     } catch (error) {
-        return {
-            error: error.message,
-            status: error.code === "auth/user-not-found" ? 400 : 401,
-        };
+        // Ако възникне грешка, хвърляме съответното съобщение
+        if (error.code === 'auth/user-not-found') {
+            throw new Error('Потребителят не съществува!');
+        } else if (error.code === 'auth/wrong-password') {
+            throw new Error('Грешна парола!');
+        } else {
+            throw new Error('Възникна грешка при влизане!');
+        }
     }
 }
