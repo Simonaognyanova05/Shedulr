@@ -1,10 +1,16 @@
-export async function deleteTask(taskId) {
-    let data = await fetch(`http://localhost:2000/remove/${taskId}`, {
-        method: 'DELETE',
-        headers: {
-            'content-type': 'application/json'
-        }
-    });
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "../config/firebaseConfig"; 
 
-    return data;
+export async function deleteTask(taskId) {
+    if (!taskId) {
+        throw new Error("Task ID is required.");
+    }
+    try {
+        const taskRef = doc(db, "tasks", taskId); 
+        await deleteDoc(taskRef);
+        console.log("Task deleted successfully!");
+    } catch (error) {
+        console.error("Error deleting task: ", error);
+        throw error;
+    }
 }

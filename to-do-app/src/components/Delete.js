@@ -9,10 +9,14 @@ export default function Delete() {
     useEffect(() => {
         deleteTask(taskId)
             .then(() => {
-                navigate('/task-list');
+                alert("Задачата беше изтрита успешно!");
+                navigate("/task-list");
             })
-    }, []);
+            .catch((error) => {
+                alert("Неуспешно изтриване на задачата!");
+                console.error(error);
+            });
+    }, [taskId, navigate]);
 
-    alert('Задачата е изтрита успешно!');
     return null;
 }

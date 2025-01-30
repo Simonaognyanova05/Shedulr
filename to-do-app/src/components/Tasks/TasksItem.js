@@ -6,7 +6,7 @@ export default function TasksItem({ task }) {
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <div className="task-actions">
-                <Link to={`/remove/${task._id}`} className='delete-btn'>Изтрий</Link>
+                <Link to={`/remove/${task.id}`} className='delete-btn'>Изтрий</Link>
             </div>
         </div>
     );
