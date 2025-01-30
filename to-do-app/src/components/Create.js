@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { createTask } from '../services/createTask';
 import { useAuth } from '../contexts/AuthContext';
+import { createTask } from '../services/createTask'; 
 
 export default function Create() {
     const navigate = useNavigate();
@@ -10,17 +10,23 @@ export default function Create() {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-
         const { title, description } = Object.fromEntries(formData);
 
         const ownerId = user._id;
 
-        let data = await createTask(title, description, ownerId);
+        try {
+            let data = await createTask(title, description, ownerId);
 
-        if(data.status === 200){
-            navigate('/task-list');
+            if (data) {
+                navigate('/task-list');
+            } else {
+                alert('Възникна грешка при създаване на задачата');
+            }
+        } catch (error) {
+            alert('Грешка при създаване на задачата: ' + error.message);
         }
-    }
+    };
+
     return (
         <div className="container">
             <h2>Създай Задача</h2>
