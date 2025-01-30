@@ -13,15 +13,15 @@ export default function Register() {
         const { name, username, password, rePassword } = Object.fromEntries(formData);
 
         if (username.length < 6) {
-            alert('Username must be min 6 symbols!');
+            alert('Потребителското име трябва да е минимум 6 символа!');
             return;
         }
         if (password !== rePassword) {
-            alert('Passwords do not match!');
+            alert('Паролите не съвпадат!');
             return;
         };
         if (password.length < 6) {
-            alert('Your password is weak!');
+            alert('Вашата парола е слаба!');
             return;
         };
 
@@ -29,7 +29,7 @@ export default function Register() {
 
         if (result.status === 200) {
             onRegister(result.user);
-            alert('Registration successful!');
+            alert('Регистрацията е успешна!');
             navigate('/');
         } else {
             alert(result.message);
@@ -41,7 +41,7 @@ export default function Register() {
             <h2>Регистрация</h2>
             <form onSubmit={registerHandler}>
                 <input type="text" name="name" placeholder="Име" required />
-                <input type="text" name="username" placeholder="Потребителско име" required />
+                <input type="text" name="username" placeholder="Имейл" required />
                 <input type="password" name="password" placeholder="Парола" required />
                 <input type="password" name="rePassword" placeholder="Потвърдете паролата" required />
                 <button type="submit">Регистрация</button>
