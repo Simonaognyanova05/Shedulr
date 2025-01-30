@@ -7,28 +7,25 @@ export default function Tasks() {
     const [tasks, setTasks] = useState([]);
     const { user } = useAuth();
 
-    const ownerId = user._id;
+    const ownerId = user._id;  
 
     useEffect(() => {
         getTasks(ownerId)
-            .then(result => {
-                return result.json()
-            })
             .then(res => {
-                setTasks(res);
+                setTasks(res); 
             })
-    }, [tasks]);
-
+            .catch(error => {
+                console.error("Грешка при извличане на задачи", error);
+            });
+    }, [ownerId]);  
 
     return (
         <div className="container-task">
             <h2>Моите Задачи</h2>
 
             {tasks.length > 0
-                ? tasks.map(x => <TasksItem key={x._id} task={x} />)
+                ? tasks.map(x => <TasksItem key={x.id} task={x} />) 
                 : 'Няма създадени задачи'}
-
-
         </div>
     );
 }
