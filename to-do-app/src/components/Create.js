@@ -10,12 +10,12 @@ export default function Create() {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        const { title, description, deadline } = Object.fromEntries(formData);
+        const { date, title, description, deadline } = Object.fromEntries(formData);
 
         const ownerId = user._id;
 
         try {
-            let data = await createTask(title, description, deadline, ownerId);
+            let data = await createTask(date, title, description, deadline, ownerId);
 
             if (data) {
                 navigate('/task-list');
@@ -31,10 +31,13 @@ export default function Create() {
         <div className="container">
             <h2>Създай Задача</h2>
             <form onSubmit={createHandler}>
+                <p>Дата на създаване на задачата:</p>
+                <input type="date" name="date" placeholder="Дата на създаване" required />
                 <input type="text" name="title" placeholder="Заглавие на задача" required />
                 <textarea name="description" placeholder="Описание на задачата" required></textarea>
+                <p>Краен срок:</p>
                 <input type="date" name="deadline" placeholder="Краен срок" required />
-                <button type="submit">Добави Задача</button>
+                <button type="submit">Добави задача</button>
             </form>
         </div>
     );
