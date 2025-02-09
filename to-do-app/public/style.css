@@ -154,6 +154,7 @@ h2 {
 }
 
 input[type="email"],
+input[type="date"],
 input[type="text"],
 input[type="password"] {
     width: 100%;

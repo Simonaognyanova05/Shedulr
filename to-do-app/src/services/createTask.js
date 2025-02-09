@@ -1,12 +1,13 @@
 import { db } from '../config/firebaseConfig'; 
 import { collection, addDoc } from 'firebase/firestore';
 
-export async function createTask(title, description, ownerId) {
+export async function createTask(title, description, deadline, ownerId) {
     try {
         const docRef = await addDoc(collection(db, "tasks"), {
             title: title,
             description: description,
             ownerId: ownerId,
+            deadline: deadline,
             createdAt: new Date() 
         });
 
