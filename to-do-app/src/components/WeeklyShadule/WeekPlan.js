@@ -30,14 +30,17 @@ export default function WeekPlan() {
                         <th>Петък</th>
                         <th>Събота</th>
                         <th>Неделя</th>
+                        <th>Промяна</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {shadule.map(x => <WeekPlanItem key={x._id} shad={x}/>)}
-                    
+                    {shadule.map(x => <WeekPlanItem key={x._id} shad={x} />)}
+
 
                 </tbody>
             </table>
+            
+
         </>
     );
 }

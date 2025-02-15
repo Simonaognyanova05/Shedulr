@@ -12,6 +12,7 @@ import Delete from './components/Delete';
 import Update from './components/Update';
 import WeekPlan from './components/WeeklyShadule/WeekPlan';
 import CreateWeeklyShadule from './components/CreateWeeklyShadule';
+import UpdateWeekShadule from './components/UpdateWeekShadule';
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
           <Route path='/task-list' element={<Tasks />} />
           <Route path='/remove/:taskId' element={<Delete />} />
           <Route path='/update/:taskId' element={<Update />} />
+          <Route path='/updateWeekPlan/:shaduleId' element={<UpdateWeekShadule />} />
+
         </Routes>
         <Footer />
       </AuthProvider>
