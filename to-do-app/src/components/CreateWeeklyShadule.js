@@ -28,7 +28,7 @@ export default function CreateWeeklyShadule() {
 
     return (
         <div className="container">
-            <h2>Създай задачи по часове</h2>
+            <h2>Създай седмична програма</h2>
             <form onSubmit={createHandler}>
                 <input type="text" name="hours" placeholder="Часови диапазон" required />
                 <input type="text" name="monday" placeholder="Ангажимент понеделник" required />
@@ -39,7 +39,7 @@ export default function CreateWeeklyShadule() {
                 <input type="text" name="saturday" placeholder="Ангажимент събота" required />
                 <input type="text" name="sunday" placeholder="Ангажимент неделя" required />
 
-                <button type="submit">Добави задача</button>
+                <button type="submit">Добави график</button>
             </form>
         </div>
     );

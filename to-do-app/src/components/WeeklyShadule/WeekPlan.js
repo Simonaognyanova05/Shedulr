@@ -18,7 +18,7 @@ export default function WeekPlan() {
     }, [shadule])
     return (
         <>
-            <h2>Моите Задачи</h2>
+            <h2>Моята програма</h2>
             <table className="schedule-table">
                 <thead>
                     <tr>

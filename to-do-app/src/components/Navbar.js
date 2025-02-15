@@ -15,10 +15,10 @@ export default function Navbar() {
     const loggedUser = (
         <ul>
             <li><Link to="/">Начало</Link></li>
-            <li><Link to="/create-task">Създай Задача</Link></li>
-            <li><Link to="/task-list">Моите Задачи</Link></li>
-            <li><Link to="/create-week-plan">Създай седмично разписание</Link></li>
-            <li><Link to="/week-plan">Седмично разписание</Link></li>
+            <li><Link to="/create-task">Създай задача</Link></li>
+            <li><Link to="/task-list">Моите задачи</Link></li>
+            <li><Link to="/create-week-plan">Създай седмична програма</Link></li>
+            <li><Link to="/week-plan">Седмична програма</Link></li>
 
             <li><Link to="/logout">Изход</Link></li>
         </ul>

@@ -29,7 +29,7 @@ export default function Create() {
 
     return (
         <div className="container">
-            <h2>Създай Задача</h2>
+            <h2>Създай задача</h2>
             <form onSubmit={createHandler}>
                 <p>Дата на създаване на задачата:</p>
                 <input type="date" name="date" placeholder="Дата на създаване" required />

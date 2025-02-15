@@ -2,7 +2,7 @@ export default function Home() {
     return (
         <>
             <div className="hero">
-                <h1>Добре дошли в To-Do App</h1>
+                <h1>Добре дошли в Schedulr</h1>
                 <p>Управлявайте задачите си лесно и ефективно. Регистрирайте се днес и планирайте ежедневието си!</p>
             </div>
 
