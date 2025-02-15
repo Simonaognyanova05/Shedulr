@@ -11,6 +11,7 @@ import Logout from './components/Logout';
 import Delete from './components/Delete';
 import Update from './components/Update';
 import WeekPlan from './components/WeeklyShadule/WeekPlan';
+import CreateWeeklyShadule from './components/CreateWeeklyShadule';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/week-plan' element={<WeekPlan />} />
+          <Route path='/create-week-plan' element={<CreateWeeklyShadule />} />
 
           <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<Register />} />
