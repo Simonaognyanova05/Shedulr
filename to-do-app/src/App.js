@@ -10,7 +10,7 @@ import Home from './components/Home';
 import Logout from './components/Logout';
 import Delete from './components/Delete';
 import Update from './components/Update';
-import WeekPlan from './components/WeekPlan';
+import WeekPlan from './components/WeeklyShadule/WeekPlan';
 
 
 function App() {
