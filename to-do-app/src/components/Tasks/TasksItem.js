@@ -8,7 +8,8 @@ export default function TasksItem({ task }) {
             <p>Описание: {task.description}</p>
             <p>Краен срок: {task.deadline}</p>
             <div className="task-actions">
-                <Link to={`/remove/${task.id}`} className='delete-btn'>Отметни като изпълнена</Link>
+                <Link to={`/remove/${task.id}`} className='delete-btn' style={{margin: "10px"}}>Отметни като изпълнена</Link>
+                <Link to={`/update/${task.id}`} className='delete-btn'>Редактиране</Link>
             </div>
         </div>
     );
