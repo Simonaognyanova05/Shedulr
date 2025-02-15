@@ -4,18 +4,23 @@ import WeekPlanItem from './WeekPlanItem';
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function WeekPlan() {
-    const [shadule, setShadule] = useState([]);
+    const [schedule, setSchedule] = useState([]);
     const { user } = useAuth();
 
     useEffect(() => {
         getWeekPlan(user._id)
             .then(res => {
-                setShadule(res)
+                setSchedule(res);
             })
             .catch(e => {
                 console.error("Грешка при намиране на задача!", e);
-            })
-    }, [shadule])
+            });
+    }, [user._id]);
+
+    const addNewItem = (newItem) => {
+        setSchedule(prevSchedule => [...prevSchedule, newItem]);
+    };
+
     return (
         <>
             <h2>Моята програма</h2>
@@ -34,13 +39,11 @@ export default function WeekPlan() {
                     </tr>
                 </thead>
                 <tbody>
-                    {shadule.map(x => <WeekPlanItem key={x._id} shad={x} />)}
-
-
+                    {schedule.map(item => (
+                        <WeekPlanItem key={item._id} schedule={item} />
+                    ))}
                 </tbody>
             </table>
-            
-
         </>
     );
 }
