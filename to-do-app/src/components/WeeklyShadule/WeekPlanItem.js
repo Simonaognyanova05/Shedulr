@@ -1,14 +1,14 @@
-export default function WeekPlanItem() {
+export default function WeekPlanItem({ shad }) {
     return (
         <tr>
-            <td>08:00 - 09:00</td>
-            <td>Математика</td>
-            <td>Физика</td>
-            <td>Химия</td>
-            <td>Биология</td>
-            <td>История</td>
-            <td>Свободно</td>
-            <td>Свободно</td>
+            <td>{shad.hours}</td>
+            <td>{shad.monday}</td>
+            <td>{shad.tuesday}</td>
+            <td>{shad.wednesday}</td>
+            <td>{shad.thursday}</td>
+            <td>{shad.friday}</td>
+            <td>{shad.saturday}</td>
+            <td>{shad.sunday}</td>
         </tr>
     );
 }

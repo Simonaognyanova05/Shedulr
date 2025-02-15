@@ -1,6 +1,21 @@
+import { useEffect, useState } from 'react';
+import { getWeekPlan } from '../../services/getWeekPlan';
 import WeekPlanItem from './WeekPlanItem';
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function WeekPlan() {
+    const [shadule, setShadule] = useState([]);
+    const { user } = useAuth();
+
+    useEffect(() => {
+        getWeekPlan(user._id)
+            .then(res => {
+                setShadule(res)
+            })
+            .catch(e => {
+                console.error("Грешка при намиране на задача!", e);
+            })
+    }, [shadule])
     return (
         <>
             <h2>Моите Задачи</h2>
@@ -18,7 +33,8 @@ export default function WeekPlan() {
                     </tr>
                 </thead>
                 <tbody>
-                    <WeekPlanItem />
+                    {shadule.map(x => <WeekPlanItem key={x._id} shad={x}/>)}
+                    
 
                 </tbody>
             </table>
