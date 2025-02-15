@@ -363,4 +363,7 @@ footer p {
         font-weight: bold;
         text-align: left;
     }
+    .delete-btn{
+        display: inline-block;
+    }
 }

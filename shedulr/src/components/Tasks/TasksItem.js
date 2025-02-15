@@ -9,7 +9,7 @@ export default function TasksItem({ task }) {
             <p>Краен срок: {task.deadline}</p>
             <div className="task-actions">
                 <Link to={`/remove/${task.id}`} className='delete-btn' style={{margin: "10px"}}>Отметни като изпълнена</Link>
-                <Link to={`/update/${task.id}`} className='delete-btn'>Редактиране</Link>
+                <Link to={`/update/${task.id}`} className='delete-btn' style={{margin: "10px"}}>Редактиране</Link>
             </div>
         </div>
     );
