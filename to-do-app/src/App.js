@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Logout from './components/Logout';
 import Delete from './components/Delete';
 import Update from './components/Update';
+import WeekPlan from './components/WeekPlan';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/week-plan' element={<WeekPlan />} />
+
           <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<Register />} />
           <Route path='/create-task' element={<Create />} />

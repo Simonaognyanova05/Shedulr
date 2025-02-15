@@ -17,6 +17,9 @@ export default function Navbar() {
             <li><Link to="/">Начало</Link></li>
             <li><Link to="/create-task">Създай Задача</Link></li>
             <li><Link to="/task-list">Моите Задачи</Link></li>
+            <li><Link to="/task-list">Създай седмично разписание</Link></li>
+            <li><Link to="/task-list">Седмично разписание</Link></li>
+
             <li><Link to="/logout">Изход</Link></li>
         </ul>
     );
